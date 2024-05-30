@@ -1,0 +1,16 @@
+﻿@model RtpcrCustomerApp.BusinessModels.ViewModels.Account.VerifyEmail
+
+@{
+    ViewBag.Title = "Registration completed";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>Thank you for registering with us.</p>
+
+To confirm your email address please click the link below.
+
+<a href="https://www.mydomain.com/UI/Account/VerifyEmail/@Model.ConfirmationToken">
+    https://www.mydomain.com/UI/Account/VerifyEmail/@Model.ConfirmationToken
+</a>
+
+This link will be valid for 2 days.

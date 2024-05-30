@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F87C32DA-E46C-4AE6-88FC-DBE6B0153293}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RtpcrCustomerApp.BusinessModels</RootNamespace>
+    <AssemblyName>RtpcrCustomerApp.BusinessModels</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DevicePlatform.cs" />
+    <Compile Include="Common\Error.cs" />
+    <Compile Include="Common\ErrorType.cs" />
+    <Compile Include="Common\OrderType.cs" />
+    <Compile Include="Common\PushNotificationMessageAndroid.cs" />
+    <Compile Include="Common\PushNotificationMessageApple.cs" />
+    <Compile Include="Common\RazorOrderInit.cs" />
+    <Compile Include="Common\RazorPayment.cs" />
+    <Compile Include="Common\TestOrderStatus.cs" />
+    <Compile Include="Common\VaccinationSlots.cs" />
+    <Compile Include="Common\VaccineOrderStatus.cs" />
+    <Compile Include="DBO\InParams\Admin\TestOrderCollectorUpdate.cs" />
+    <Compile Include="DBO\InParams\Common\AccountPasswordUpdate.cs" />
+    <Compile Include="DBO\InParams\Common\AccountProfileUpdate.cs" />
+    <Compile Include="DBO\InParams\Common\AccountUpdate.cs" />
+    <Compile Include="DBO\InParams\Common\AccountInsert.cs" />
+    <Compile Include="DBO\InParams\Common\LocationUpdate.cs" />
+    <Compile Include="DBO\InParams\Common\LocationInsert.cs" />
+    <Compile Include="DBO\InParams\Test\CollectorLocationUpdate.cs" />
+    <Compile Include="DBO\InParams\Test\CollectorOrderAccept.cs" />
+    <Compile Include="DBO\InParams\Test\CollectorOrderDecline.cs" />
+    <Compile Include="DBO\InParams\Test\TestOrderInsert.cs" />
+    <Compile Include="DBO\InParams\Test\TestOrderPatientUpdate.cs" />
+    <Compile Include="DBO\InParams\Test\TestOrderPaymentUpdate.cs" />
+    <Compile Include="DBO\InParams\Test\TestSampleCollectorUpdate.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccinatorLocationUpdate.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccinatorOrderAssign.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccinatorOrderAccept.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccinatorOrderDecline.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccineOrderInsert.cs" />
+    <Compile Include="DBO\InParams\Admin\VaccineOrderVaccinatorUpdate.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccineOrderPatientUpdate.cs" />
+    <Compile Include="DBO\InParams\Vaccination\VaccineOrderPaymentUpdate.cs" />
+    <Compile Include="DBO\OutParams\Admin\TestOrderAdminResult.cs" />
+    <Compile Include="DBO\OutParams\Admin\VaccineOrderAdminResult.cs" />
+    <Compile Include="DBO\OutParams\Common\CompanyResult.cs" />
+    <Compile Include="DBO\OutParams\Common\DeviceDetailsResult.cs" />
+    <Compile Include="DBO\OutParams\Common\GetAccountResult.cs" />
+    <Compile Include="DBO\OutParams\Common\LocationResult.cs" />
+    <Compile Include="DBO\OutParams\Common\LoginResult.cs" />
+    <Compile Include="DBO\OutParams\Common\RoleAccessDetails.cs" />
+    <Compile Include="DBO\OutParams\Test\CollectorAssignedOrderResult.cs" />
+    <Compile Include="DBO\OutParams\Test\CollectorDetailsResult.cs" />
+    <Compile Include="DBO\OutParams\Test\CollectorLocationResult.cs" />
+    <Compile Include="DBO\OutParams\Test\CollectorLoginResult.cs" />
+    <Compile Include="DBO\OutParams\Test\CollectorOrderHistoryResult.cs" />
+    <Compile Include="DBO\OutParams\Test\CollectorScheduledResult.cs" />
+    <Compile Include="DBO\OutParams\Test\TestOrderByRegionResult.cs" />
+    <Compile Include="DBO\OutParams\Test\TestOrderConfirmation.cs" />
+    <Compile Include="DBO\OutParams\Test\TestOrderHistoryResult.cs" />
+    <Compile Include="DBO\OutParams\Test\TestOrderItemResult.cs" />
+    <Compile Include="DBO\OutParams\Test\TestProductResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\PatientResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccinatorAssignedOrderResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccinatorDetailsResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccinatorLocationResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccinatorLoginResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccinatorOrderHistoryResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccinatorScheduledResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccineOrderConfirmation.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccineOrderHistoryResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccineOrderItemResult.cs" />
+    <Compile Include="DBO\OutParams\Vaccination\VaccineProductResult.cs" />
+    <Compile Include="DTO\Request\Admin\AssignCollectorRequest.cs" />
+    <Compile Include="DTO\Request\Admin\AssignVaccinatorRequest.cs" />
+    <Compile Include="DTO\Request\Common\AccountProfileUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Common\ChangeMPINRequest.cs" />
+    <Compile Include="DTO\Request\Common\ChangePasswordRequest.cs" />
+    <Compile Include="DTO\Request\Common\SendOTPRequest.cs" />
+    <Compile Include="DTO\Request\Common\GenericSignInRequest.cs" />
+    <Compile Include="DTO\Request\Common\VerifyOTPRequest.cs" />
+    <Compile Include="DTO\Request\Test\CollectorAcceptOrderRequest.cs" />
+    <Compile Include="DTO\Request\Test\CollectorDeclineOrderRequest.cs" />
+    <Compile Include="DTO\Request\Test\CollectorLocationRequest.cs" />
+    <Compile Include="DTO\Request\Test\CollectorStatusUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Test\TestOrderRequest.cs" />
+    <Compile Include="DTO\Request\Test\TestPatientRequest.cs" />
+    <Compile Include="DTO\Request\Test\TestPatientUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Test\TestPaymentUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinatorAssignOrderRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinatorAcceptOrderRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinatorDeclineOrderRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinatorStatusUpdateRequest.cs" />
+    <Compile Include="DTO\Response\Admin\TestOrderAdminResponse.cs" />
+    <Compile Include="DTO\Response\Common\DeviceDetailsResponse.cs" />
+    <Compile Include="DTO\Response\Test\CollectorAssignedOrderResponse.cs" />
+    <Compile Include="DTO\Response\Test\CollectorOrderHistoryResponse.cs" />
+    <Compile Include="DTO\Response\Test\CollectorSignInResponse.cs" />
+    <Compile Include="DTO\Response\Test\TestOrderByRegionResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccinatorAssignedOrderResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccinatorOrderHistoryResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccinatorSignInResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccineOrderResponse.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccineOrderVerifyUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinatorLocationRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccineOrderRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinePatientUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinePatientRequest.cs" />
+    <Compile Include="DTO\Request\Vaccination\VaccinePaymentUpdateRequest.cs" />
+    <Compile Include="DTO\Response\Admin\VaccineOrderAdminResponse.cs" />
+    <Compile Include="DTO\Response\ApiResponse.cs" />
+    <Compile Include="DTO\Response\Common\CompanyResponse.cs" />
+    <Compile Include="DTO\Response\IResponse.cs" />
+    <Compile Include="DTO\Request\Common\CreateAccountRequest.cs" />
+    <Compile Include="DTO\Response\Common\GetAccountResponse.cs" />
+    <Compile Include="DTO\Response\ListResponse.cs" />
+    <Compile Include="DTO\Response\ResponseBase.cs" />
+    <Compile Include="DTO\Response\Test\CollectorDetailsResponse.cs" />
+    <Compile Include="DTO\Response\Test\CollectorLocationResponse.cs" />
+    <Compile Include="DTO\Response\Test\TestOrderHistoryResponse.cs" />
+    <Compile Include="DTO\Response\Test\TestOrderItemResponse.cs" />
+    <Compile Include="DTO\Response\Test\TestOrderResponse.cs" />
+    <Compile Include="DTO\Response\Test\TestProductResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccinatorDetailsResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccinatorLocationResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccinatorOpenOrderResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccineOrderHistoryResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccineOrderItemResponse.cs" />
+    <Compile Include="DTO\Response\Vaccination\VaccineProductResponse.cs" />
+    <Compile Include="DTO\Test %28To be refactored%29\Category.cs" />
+    <Compile Include="Common\Environments.cs" />
+    <Compile Include="Common\ModelBase.cs" />
+    <Compile Include="Common\Modules.cs" />
+    <Compile Include="Common\Role.cs" />
+    <Compile Include="Common\ValidationError.cs" />
+    <Compile Include="Common\ValidationType.cs" />
+    <Compile Include="DTO\Request\Common\Company.cs" />
+    <Compile Include="DTO\Request\Common\ConsumerProfile.cs" />
+    <Compile Include="DTO\Request\Common\AccountUpdateRequest.cs" />
+    <Compile Include="DTO\Request\Common\Family.cs" />
+    <Compile Include="DTO\Test %28To be refactored%29\OrderUser.cs" />
+    <Compile Include="DTO\Response\StatusResponse.cs" />
+    <Compile Include="DTO\Request\Common\UserSignInRequest.cs" />
+    <Compile Include="DTO\Response\Common\UserSignInResponse.cs" />
+    <Compile Include="DTO\Test %28To be refactored%29\Lab.cs" />
+    <Compile Include="DTO\Request\Common\LocationRequest.cs" />
+    <Compile Include="DTO\Test %28To be refactored%29\Order.cs" />
+    <Compile Include="DTO\Test %28To be refactored%29\Product.cs" />
+    <Compile Include="DTO\Validators\VaccinationSlotAttribute.cs" />
+    <Compile Include="Exceptions\ServiceException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\Account\VerifyEmail.cs" />
+    <Compile Include="ViewModels\Test\TestOrderConfirmation.cs" />
+    <Compile Include="ViewModels\Test\TestPatient.cs" />
+    <Compile Include="ViewModels\Vaccination\VaccineOrderConfirmation.cs" />
+    <Compile Include="ViewModels\Vaccination\VaccinePatient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Common\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

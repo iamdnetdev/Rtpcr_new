@@ -1,0 +1,71 @@
+﻿@model RtpcrCustomerApp.BusinessModels.ViewModels.Vaccination.VaccineOrderConfirmation
+
+@{
+    ViewBag.Title = "Order Confirmed: #" + Model.OrderID;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>Thank you for ordering with us!</p>
+<p>Here are the order details:</p>
+
+<table>
+    <tr>
+        <th>Order ID</th>
+        <td>@Model.OrderID</td>
+    </tr>
+    <tr>
+        <th>Order Type</th>
+        <td>@Model.OrderType</td>
+    </tr>
+    @if (Model.OrderType == RtpcrCustomerApp.BusinessModels.Common.OrderType.Scheduled)
+    {
+        <tr>
+            <th>Scheduled Date</th>
+            <td>@Model.ScheduleDate.Value.ToLongDateString()</td>
+        </tr>
+        <tr>
+            <th>Scheduled Slot</th>
+            <td>@Model.ScheduleSlot</td>
+        </tr>
+    }
+    <tr>
+        <th>Vaccinator</th>
+        <td>@Model.Vaccinator</td>
+    </tr>
+    <tr>
+        <th>Total Quantity</th>
+        <td>@Model.Quantity</td>
+    </tr>
+    <tr>
+        <th>Total Cost</th>
+        <td>@Model.Amount</td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <th>Patient Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Vaccine Name</th>
+        <th>Vaccination Date</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th>SGST</th>
+        <th>CGST</th>
+    </tr>
+    @foreach (var item in Model.VaccinePatients)
+    {
+        <tr>
+            <td>@(item.FirstName + " " + item.LastName)</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.ProductName</td>
+            <td>@item.VaccinationDate.ToLongDateString()</td>
+            <td>@item.OrderItemStatus</td>
+            <td>@item.ProductPrice.ToString("0.##")</td>
+            <td>@item.SGST.ToString("0.##")</td>
+            <td>@item.CGST.ToString("0.##")</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,12 @@
+﻿@model RtpcrCustomerApp.BusinessModels.ViewModels.Account.VerifyEmail
+
+@{
+    ViewBag.Title = "Verify Email";
+}
+
+<h2>Verify Email</h2>
+To confirm your email address please click the link below.
+
+<a href="https://www.mydomain.com/UI/Account/VerifyEmail/@Model.ConfirmationToken">
+    https://www.mydomain.com/UI/Account/VerifyEmail/@Model.ConfirmationToken
+</a>
